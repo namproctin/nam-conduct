@@ -51,11 +51,14 @@ def search_schools(str_query):
 
   max_score = 0
   second_max_score = 0
+  third_max_score = 0
 
   best_result_school_name = None
   best_result_city_name = None
   second_best_result_school_name = None
   second_best_result_city_name = None
+  third_best_result_school_name = None
+  third_best_result_city_name = None
 
   # score the city name first then score up the school name later
 
@@ -82,6 +85,10 @@ def search_schools(str_query):
         second_max_score = second_score
         second_best_result_school_name = school_name
         second_best_result_city_name = city_name
+      elif second_score > third_max_score:
+        third_max_score = second_score
+        third_best_result_school_name = school_name
+        third_best_result_city_name = city_name
 
   end_time = time.time()
   duration = str(round(end_time,20) - round(start_time,20))
@@ -93,6 +100,10 @@ def search_schools(str_query):
     print("2. ",second_best_result_school_name)
     print(second_best_result_city_name, ",", city_code_dict[second_best_result_city_name] )
     #print("score", second_max_score)
+  if third_max_score > 0:
+    print("3. ",third_best_result_school_name)
+    print(third_best_result_city_name, ",", city_code_dict[third_best_result_city_name] )
+    #print("score", third_max_score)
 
 loaddb()
 
