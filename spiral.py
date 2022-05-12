@@ -102,11 +102,11 @@ def move_spiral(arr):
 
 
 
-#matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-#move_spiral(matrix)
-
-matrix = [[2, 3, 4], [5, 6, 7], [8, 9, 10], [11, 12, 13], [14, 15, 16]]
+matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
 move_spiral(matrix)
+
+#matrix = [[2, 3, 4], [5, 6, 7], [8, 9, 10], [11, 12, 13], [14, 15, 16]]
+#move_spiral(matrix)
 
 #matrix = [[7], [9], [6]]
 #move_spiral(matrix)
