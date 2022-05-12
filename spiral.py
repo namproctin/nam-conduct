@@ -25,7 +25,7 @@ def switch_direction(current_direction):
 def move_spiral(arr):
 
   visited = []
-  visited = {(-1,-1)}
+  visited = set()
 
   result=[]
 
@@ -38,6 +38,7 @@ def move_spiral(arr):
 
   while current_step < max_step:
     current_step += 1
+    #print("current",current_step)
     if ( current_y,current_x) in visited:
       current_direction = switch_direction(current_direction)
       current_step -= 1
@@ -52,7 +53,8 @@ def move_spiral(arr):
         if current_x < len(arr[0]) -1 :
           current_x += 1
           if (current_y,current_x) in visited:
-            current_x += 1
+            current_x -= 1
+            current_y +=1
             current_direction = switch_direction(current_direction)
         else:
           current_direction = switch_direction(current_direction)
@@ -100,5 +102,14 @@ def move_spiral(arr):
 
 
 
-matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+#matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+#move_spiral(matrix)
+
+matrix = [[2, 3, 4], [5, 6, 7], [8, 9, 10], [11, 12, 13], [14, 15, 16]]
 move_spiral(matrix)
+
+#matrix = [[7], [9], [6]]
+#move_spiral(matrix)
+
+#matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+#move_spiral(matrix)
