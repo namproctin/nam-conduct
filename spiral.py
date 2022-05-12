@@ -38,14 +38,10 @@ def move_spiral(arr):
 
   while current_step < max_step:
     current_step += 1
-    #print("current",current_step)
     if ( current_y,current_x) in visited:
       current_direction = switch_direction(current_direction)
       current_step -= 1
     else:
-      #print("aaa")
-      #print(current_y,current_x)
-      #print(arr[current_y][current_x])
       result.append(arr[current_y][current_x])
       visited.add((current_y,current_x))
 
@@ -90,12 +86,6 @@ def move_spiral(arr):
           current_direction = switch_direction(current_direction)
           current_x += 1
 
-
-
-      #print(visited)
-
-    #print(result)
-    #break
   print(result)
   return result
 
